@@ -3,9 +3,14 @@ import SignUpForm from "./signUpForm";
 
 class SignUp extends Component {
   render() {
+
+    onSubmit = (fields) {
+
+    }
+    
     return (
       <div className="sign-up">
-        <SignUpForm />
+        <SignUpForm onSubmit={(event) => this.onSubmit(event)} />
       </div>
     );
   }
