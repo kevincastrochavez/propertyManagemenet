@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
@@ -20,12 +20,7 @@ import SignUp from "./components/auth/signUp";
 import SignIn from "./components/auth/signIn";
 import Layout from "./components/layout";
 import requireAuth from "./components/requireAuth";
-
-class Dashboard extends Component {
-  render() {
-    return <div>Hey</div>;
-  }
-}
+import Dashboard from "./components/dashboard";
 
 function main() {
   ReactDOM.render(
