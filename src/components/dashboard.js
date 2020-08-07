@@ -21,7 +21,19 @@ class Dashboard extends Component {
     };
   }
 
-  handleTabChange = (title) => {};
+  handleTabChange = (title) => {
+    const tabs = this.state.tabs;
+
+    tabs.map((tab) => {
+      if (tab.title == title) {
+        tab.active = true;
+      } else {
+        tab.active = false;
+      }
+    });
+
+    this.setState({ tabs });
+  };
 
   render() {
     return (
