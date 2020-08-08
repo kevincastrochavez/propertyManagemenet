@@ -1,7 +1,10 @@
 .newsletter-grid {
+  justify-content: center;
+  margin-top: 4.7rem;
   grid-row: content-s/content-e;
   display: grid;
   grid-template-rows: [s box-s] 16rem [box-e archive-s] 1fr [archive-e e];
   grid-template-columns: [box-s archive-s] 16rem [box-e archive-e latest-s] 700px [latest-e];
-  justify-content: center;
+  grid-row-gap: 3.8rem;
+  grid-column-gap: 5.1rem;
 }
