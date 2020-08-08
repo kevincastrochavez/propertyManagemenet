@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 import { FormTitle } from "../formTitle";
-import { FormInput, FormButton } from "../formFields";
-import TextLink from "../textLink";
+import { FormInput, FormTextArea } from "../formFields";
 
 class NewsletterNewForm extends Component {
   render() {
@@ -10,14 +9,25 @@ class NewsletterNewForm extends Component {
 
     return (
       <form onSubmit={handleSubmit} className="newsletter-new-form">
-        <FormTitle className="newsletter-new-form__title" text="Login" />
+        <FormTitle
+          className="newsletter-new-form__title"
+          text="New Newsletter"
+        />
         <Field
-          className="newsletter-new-form__email"
-          placeholder="Enter Email"
+          className="newsletter-new-form__newsletter-title"
+          placeholder="Newsletter Title"
           component={FormInput}
-          name="email"
-          type="email"
-          title="Email"
+          name="title"
+          type="text"
+          title="Newsletter Title"
+        />
+        <Field
+          className="newsletter-new-form__body"
+          placeholder="Newsletter Body"
+          component={FormTextArea}
+          name="body"
+          type="text"
+          title="Body"
         />
       </form>
     );
