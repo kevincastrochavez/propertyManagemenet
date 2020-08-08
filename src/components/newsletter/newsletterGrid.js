@@ -28,7 +28,7 @@ class NewsletterGrid extends Component {
         />
         <NewsletterBox date={new Date()} />
         <NewsletterArchive />
-        <NewsletterLatest {...latest} />
+        <NewsletterLatest history={this.props.history} {...latest} />
       </div>
     );
   }
