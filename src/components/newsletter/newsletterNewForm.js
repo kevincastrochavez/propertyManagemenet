@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 import { FormTitle } from "../formTitle";
-import { FormInput, FormTextArea } from "../formFields";
+import { FormInput, FormTextArea, FormButton } from "../formFields";
 
 class NewsletterNewForm extends Component {
   render() {
@@ -28,6 +28,15 @@ class NewsletterNewForm extends Component {
           name="body"
           type="text"
           title="Body"
+        />
+        <Field
+          className="sign-in-submit"
+          small={true}
+          danger={true}
+          component={FormButton}
+          name="submit"
+          type="submit"
+          title="Submit"
         />
       </form>
     );
