@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 class NewsletterLatest extends Component {
   handleEdit = () => {
-    this.props.history.push("/newsletter/edit");
+    this.props.history.push(`/newsletter/edit/${this.props._id}`);
   };
 
   render() {
