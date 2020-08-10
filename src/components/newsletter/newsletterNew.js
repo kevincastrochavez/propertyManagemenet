@@ -3,11 +3,11 @@ import NewsletterNewForm from "./newsletterNewForm";
 
 class NewsletterNew extends Component {
   onSubmit = (fields) => {
-    console.log("try to submit");
+    this.props.history.push("/dashboard");
   };
 
   onCancel = () => {
-    console.log("cancel");
+    this.props.history.push("/dashboard");
   };
 
   render() {
