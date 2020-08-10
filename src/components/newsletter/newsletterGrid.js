@@ -12,7 +12,7 @@ class NewsletterGrid extends Component {
   };
 
   componentDidMount() {
-    this.props.fetchNewsletter();
+    this.props.fetchNewsletters();
   }
 
   render() {

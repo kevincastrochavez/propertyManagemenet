@@ -1,4 +1,4 @@
-import { SET_NEWSLETTER } from "../actions/types";
+import { SET_NEWSLETTERS } from "../actions/types";
 
 const INITIAL_STATE = {
   newsletters: [],
@@ -6,7 +6,7 @@ const INITIAL_STATE = {
 
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
-    case SET_NEWSLETTER:
+    case SET_NEWSLETTERS:
       const newsletters = action.payload;
       return {
         ...state,

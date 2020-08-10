@@ -1,4 +1,4 @@
-import { SET_NEWSLETTER } from "./types";
+import { SET_NEWSLETTERS } from "./types";
 
 export function fetchNewsletters() {
   const response = {
@@ -23,7 +23,7 @@ export function fetchNewsletters() {
   };
 
   return {
-    type: SET_NEWSLETTER,
+    type: SET_NEWSLETTERS,
     payload: response.data,
   };
 }
