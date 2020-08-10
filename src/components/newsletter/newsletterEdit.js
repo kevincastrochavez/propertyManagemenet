@@ -10,6 +10,10 @@ class EditNewsletter extends Component {
     this.props.history.push("/dashboard");
   };
 
+  componentDidMount() {
+    //   this.props.fetchNewsletterWithId
+  }
+
   render() {
     return (
       <div className="newsletter-new">
