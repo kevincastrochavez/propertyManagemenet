@@ -1,5 +1,6 @@
 .requests-boxes {
   grid-row: boxes-s/boxes-e;
   grid-column: boxes-s/boxes-s;
-  height: 100%;
+  display: grid;
+  grid-row-gap: 1.55rem;
 }

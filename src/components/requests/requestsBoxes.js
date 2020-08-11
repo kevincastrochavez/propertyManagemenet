@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import RequestsBox from "./requestsBox";
 
 class RequestsBoxes extends Component {
   render() {
     return (
       <div className="requests-boxes">
-        <div>Pending</div>
-        <div>Progress</div>
-        <div>Complete</div>
+        <RequestsBox title={"Pending"} count={3} />
+        <RequestsBox title={"In Progress"} count={8} />
+        <RequestsBox title={"Complete"} count={0} />
       </div>
     );
   }
