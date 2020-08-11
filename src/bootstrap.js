@@ -34,6 +34,7 @@ function main() {
             <Route path="/" exact component={SignIn} />
             <Route path="/signin" component={SignIn} />
             <Route path="/signup" component={SignUp} />
+
             <Route path="/dashboard" component={requireAuth(Dashboard)} />
             <Route
               path="/newsletter/new"
@@ -46,6 +47,11 @@ function main() {
             <Route
               path="/newsletter/details/:id"
               component={requireAuth(NewsletterDetails)}
+            />
+
+            <Route
+              path="/requests/new"
+              component={requireAuth(NewsletterNew)}
             />
           </Layout>
         </Switch>
