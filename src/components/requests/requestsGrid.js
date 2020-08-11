@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Button from "../button";
+import RequestsBoxes from "./requestsBoxes";
+import Requests from "./requests";
 
 class RequestsGrid extends Component {
   handleAddRequest = () => {
@@ -14,6 +16,8 @@ class RequestsGrid extends Component {
           icon="fas fa-plus"
           callback={() => this.handleAddRequest()}
         />
+        <RequestsBoxes />
+        <Requests />
       </div>
     );
   }
