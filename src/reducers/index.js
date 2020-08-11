@@ -2,11 +2,13 @@ import { combineReducers } from "redux";
 import { reducer as form } from "redux-form";
 import auth from "./authReducer";
 import newsletter from "./newsletterReducer";
+import requests from "./requestsReducer";
 
 const rootReducer = combineReducers({
   form,
   auth,
   newsletter,
+  requests,
 });
 
 export default rootReducer;

@@ -6,7 +6,7 @@ class RequestsBox extends Component {
 
     return (
       <a
-        onClick={() => console.log("select box")}
+        onClick={(title) => this.props.changeSelectedRequestType(title)}
         className="requests-box requests-box-inactive"
       >
         <div className="requests-box__count">{count}</div>
