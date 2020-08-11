@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions";
+import NewsletterBox from "./newsletterBox";
+import NewsletterLatest from "./newsletterLatest";
 
 class NewsletterDetails extends Component {
   componentDidMount() {
@@ -9,7 +11,12 @@ class NewsletterDetails extends Component {
 
   render() {
     console.log(this.props.fetchNewsletterWithId);
-    return <div className="newsletter-detail">Newsletter Detail</div>;
+    return (
+      <div className="newsletter-detail">
+        <NewsletterBox />
+        <NewsletterLatest />
+      </div>
+    );
   }
 }
 
