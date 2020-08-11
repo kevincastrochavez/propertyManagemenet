@@ -13,7 +13,7 @@ class EditNewsletter extends Component {
   };
 
   componentDidMount() {
-    this.props.fetchNewslettersWithId(this.props.match.params.id);
+    this.props.fetchNewsletterWithId(this.props.match.params.id);
   }
 
   render() {

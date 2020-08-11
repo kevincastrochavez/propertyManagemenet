@@ -1,5 +1,5 @@
 import { signUp, signIn } from "./auth";
 
-import { fetchNewsletters, fetchNewslettersWithId } from "./newsletter";
+import { fetchNewsletters, fetchNewsletterWithId } from "./newsletter";
 
-export { signUp, signIn, fetchNewsletters, fetchNewslettersWithId };
+export { signUp, signIn, fetchNewsletters, fetchNewsletterWithId };
