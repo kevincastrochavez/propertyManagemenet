@@ -13,8 +13,8 @@ class NewsletterDetails extends Component {
     console.log(this.props.fetchNewsletterWithId);
     return (
       <div className="newsletter-detail">
-        <NewsletterBox />
-        <NewsletterLatest />
+        <NewsletterBox date={this.props.newsletterToEdit.date} />
+        <NewsletterLatest {...this.props.newsletterToEdit} />
       </div>
     );
   }

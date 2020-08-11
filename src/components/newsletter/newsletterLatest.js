@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Button from "../button";
-import { connect } from "react-redux";
+import history from "../../history";
 
 class NewsletterLatest extends Component {
   handleEdit = () => {
-    this.props.history.push(`/newsletter/edit/${this.props._id}`);
+    history.push(`/newsletter/edit/${this.props._id}`);
   };
 
   render() {
@@ -26,13 +26,4 @@ class NewsletterLatest extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  const { newsletters } = state.newsletter;
-  const latestNewsletter = newsletters[0];
-
-  return {
-    ...latestNewsletter,
-  };
-}
-
-export default connect(mapStateToProps)(NewsletterLatest);
+export default NewsletterLatest;
