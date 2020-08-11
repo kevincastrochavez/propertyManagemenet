@@ -4,6 +4,7 @@ import * as actions from "../../actions";
 import NewsletterBox from "./newsletterBox";
 import NewsletterLatest from "./newsletterLatest";
 import { FormTitle } from "../formTitle";
+import { FormButton } from "../formFields";
 
 class NewsletterDetails extends Component {
   componentDidMount() {
@@ -13,13 +14,19 @@ class NewsletterDetails extends Component {
   render() {
     console.log(this.props.fetchNewsletterWithId);
     return (
-      <div className="newsletter-detail">
+      <div className="newsletter-details">
         <FormTitle
-          className="newsletter-detail__title"
-          text="Newsletter Detail"
+          className="newsletter-details__title"
+          text="Newsletter Archive"
         />
         <NewsletterBox date={this.props.newsletterToEdit.date} />
         <NewsletterLatest {...this.props.newsletterToEdit} />
+        <FormButton
+          className="newsletter-details__cancel"
+          small={true}
+          title="Cancel"
+          onClick={() => this.props.history.push("/dashboard")}
+        />
       </div>
     );
   }
