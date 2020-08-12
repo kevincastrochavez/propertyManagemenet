@@ -9,19 +9,22 @@ export function changeSelectedRequestType(boxType) {
   };
 }
 
-export function createNewRequest(userId, fields, success) {
-  console.log("token:", localStorage.getItem("token"));
-  console.log("userID:", userId);
-  console.log("fields:", fields);
-  // return function () {
-  //   axios
-  //     .post(`${ROOT_URL}/requests/new`, newRequest)
-  //     .then((response) => {
-  //       console.log(response.data);
-  //       success();
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
+export function createNewRequest(userId, formData, success) {
+  const token = localStorage.getItem("token");
+  return function () {
+    axios
+      .post(`${ROOT_URL}/requests/new`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          authorization: token,
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+        success();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 }
