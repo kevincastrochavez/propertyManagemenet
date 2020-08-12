@@ -28,3 +28,19 @@ export function createNewRequest(userId, formData, success) {
       });
   };
 }
+
+export function fetchRequests() {
+  const token = localStorage.getItem("token");
+  return function () {
+    axios
+      .get(`${ROOT_URL}/requests`, {
+        headers: { authorization: token },
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+}
