@@ -24,6 +24,18 @@ class RequestsItem extends Component {
           icon="fas fa-wrench"
           callback={() => console.log("try to move")}
         />
+
+        <div className="requests-item__description">
+          <img
+            className="requests-item__description-img"
+            src="http://via.placeholder.com/160x94"
+          />
+          <p className="requests-item__description-text">
+            Lorem Ipsum ajaksb nauhdfiune skjhndfvushbkrn sudvhinuskhnc
+            sunvisuius usiufopw woiuh io fwiljfoiwh fjiw nsfi hslid fowheifh
+            wilsejfo8w oij owin 8oli 8y ih
+          </p>
+        </div>
       </div>
     );
   }
