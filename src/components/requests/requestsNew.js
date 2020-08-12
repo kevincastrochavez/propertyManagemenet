@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import NewsletterNewForm from "../newsletter/newsletterNewForm";
+import { connect } from "react-redux";
+import * as actions from "../../actions";
+import { createNewRequest } from "./requests";
 
 class RequestsNew extends Component {
   onSubmit = (fields) => {
-    this.props.history.push("/dashboard");
+    this.props.createNewRequest(this.props._id, {}, () => {
+      this.props.history.push("/dashboard");
+    });
   };
 
   onCancel = () => {
@@ -27,4 +32,9 @@ class RequestsNew extends Component {
   }
 }
 
-export default RequestsNew;
+function mapStateToProps(state) {
+  const { _id } = state.auth.user;
+  return { _id };
+}
+
+export default connect(mapStateToProps, actions)(RequestsNew);
