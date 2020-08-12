@@ -6,7 +6,7 @@ import { createNewRequest } from "./requests";
 
 class RequestsNew extends Component {
   onSubmit = (fields) => {
-    this.props.createNewRequest(this.props._id, {}, () => {
+    this.props.createNewRequest(this.props._id, fields, () => {
       this.props.history.push("/dashboard");
     });
   };
