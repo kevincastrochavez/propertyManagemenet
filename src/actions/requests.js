@@ -23,8 +23,8 @@ export function createNewRequest(userId, formData, success) {
         console.log(response.data);
         success();
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((err) => {
+        console.log(err);
       });
   };
 }
