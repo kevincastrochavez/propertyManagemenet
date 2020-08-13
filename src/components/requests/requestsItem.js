@@ -3,6 +3,8 @@ import Icon from "../icon";
 import Button from "../button";
 import AnimateHeight from "react-animate-height";
 import { ROOT_URL } from "../../config";
+import { connect } from "react-redux";
+import * as actions from "../../actions";
 
 class RequestsItem extends Component {
   constructor() {
@@ -56,7 +58,7 @@ class RequestsItem extends Component {
         <Button
           className="requests-item__move"
           icon="fas fa-wrench"
-          callback={() => console.log("try to move")}
+          callback={() => this.props.changeStatus({ _id, status })}
         />
 
         <div className="requests-item__description">
@@ -76,4 +78,4 @@ class RequestsItem extends Component {
   }
 }
 
-export default RequestsItem;
+export default connect(null, actions)(RequestsItem);

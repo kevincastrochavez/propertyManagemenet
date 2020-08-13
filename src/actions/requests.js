@@ -47,3 +47,24 @@ export function fetchRequests() {
       });
   };
 }
+
+export function changeStatus() {
+  const token = localStorage.getItem("token");
+
+  return function ({ _id, status }) {
+    axios
+      .post(
+        `${ROOT_URL}/requests/update-status`,
+        { _id, status },
+        {
+          headers: { authorization: token },
+        }
+      )
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+}

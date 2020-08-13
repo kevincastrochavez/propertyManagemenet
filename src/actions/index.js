@@ -6,6 +6,7 @@ import {
   changeSelectedRequestType,
   createNewRequest,
   fetchRequests,
+  changeStatus,
 } from "./requests";
 
 export {
@@ -16,4 +17,5 @@ export {
   changeSelectedRequestType,
   createNewRequest,
   fetchRequests,
+  changeStatus,
 };
