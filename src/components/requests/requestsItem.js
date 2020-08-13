@@ -35,15 +35,21 @@ class RequestsItem extends Component {
   };
 
   render() {
-    const { title, body, date, imageUrl } = this.props;
+    const { title, body, date, imageUrl, status } = this.props;
     const parsedDate = new Date(date);
+    var mainIcon = "fas fa-exclamation-triangle";
+    var moveButtonIcon = "fas fa-wrench";
+    if (status == "In Progress") {
+      moveButtonIcon = "fas fa-check-circle";
+      mainIcon = "fas fa-wrench";
+    } else if (status == "Complete") {
+      moveButtonIcon = "fas fa-exclamation-triangle";
+      mainIcon = "fas fa-check-circle";
+    }
 
     return (
       <div id="requests-item" className="requests-item">
-        <Icon
-          className="requests-item__icon"
-          icon="fas fa-exclamation-triangle"
-        />
+        <Icon className="requests-item__icon" icon={mainIcon} />
 
         <div className="requests-item__title">
           <div className="requests-item__title__text">{title}</div>
@@ -64,7 +70,7 @@ class RequestsItem extends Component {
 
         <Button
           className="requests-item__move"
-          icon="fas fa-wrench"
+          icon={moveButtonIcon}
           callback={() => this.handleStatus()}
         />
 
