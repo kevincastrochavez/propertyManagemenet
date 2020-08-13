@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Icon from "../icon";
 import Button from "../button";
 import AnimateHeight from "react-animate-height";
+import { ROOT_URL } from "../../config";
 
 class RequestsItem extends Component {
   constructor() {
@@ -25,6 +26,9 @@ class RequestsItem extends Component {
   };
 
   render() {
+    const { _id, title, body, date, imageUrl, status } = this.props;
+    const parsedDate = new Date(date);
+
     return (
       <div id="requests-item" className="requests-item">
         <Icon
@@ -33,7 +37,7 @@ class RequestsItem extends Component {
         />
 
         <div className="requests-item__title">
-          <div className="requests-item__title__text">Broken bathroom</div>
+          <div className="requests-item__title__text">{title}</div>
 
           <Icon
             callback={() => this.toggleDropdown()}
@@ -42,9 +46,12 @@ class RequestsItem extends Component {
           />
         </div>
 
-        <div className="requests-item__tenant-unit">Kevin - Unit 204</div>
+        <div className="requests-item__tenant-unit"> Kevin - Unit 204</div>
 
-        <div className="requests-item__date">23/03/1997</div>
+        <div className="requests-item__date">
+          {parsedDate.getMonth() + 1}/{parsedDate.getDate()}/
+          {parsedDate.getFullYear() - 2000}
+        </div>
 
         <Button
           className="requests-item__move"
@@ -57,14 +64,10 @@ class RequestsItem extends Component {
             <div className="requests-item__description">
               <img
                 className="requests-item__description-img"
-                src="http://via.placeholder.com/160x94"
+                src={`${ROOT_URL}/${imageUrl}`}
               />
 
-              <p className="requests-item__description-text">
-                Lorem Ipsum ajaksb nauhdfiune skjhndfvushbkrn sudvhinuskhnc
-                sunvisuius usiufopw woiuh io fwiljfoiwh fjiw nsfi hslid fowheifh
-                wilsejfo8w oij owin 8oli 8y ih
-              </p>
+              <p className="requests-item__description-text">{body}</p>
             </div>
           </AnimateHeight>
         </div>
