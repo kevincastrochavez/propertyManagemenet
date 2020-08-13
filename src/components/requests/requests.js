@@ -7,7 +7,9 @@ class Requests extends Component {
     return (
       <div className="requests">
         {this.props.requests.map((requestIitem) => {
-          return <RequestsItem {...requestIitem} key={requestIitem._id} />;
+          if (requestIitem.status == this.props.selectedRequestType) {
+            return <RequestsItem {...requestIitem} key={requestIitem._id} />;
+          }
         })}
       </div>
     );
@@ -15,10 +17,11 @@ class Requests extends Component {
 }
 
 function mapStateToProps(state) {
-  const { requests } = state.requests;
+  const { requests, selectedRequestType } = state.requests;
 
   return {
     requests,
+    selectedRequestType,
   };
 }
 
