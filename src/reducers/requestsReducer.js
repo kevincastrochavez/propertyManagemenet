@@ -2,7 +2,7 @@ import { CHANGE_SELECTED_REQUEST_TYPE, SET_REQUESTS } from "../actions/types";
 
 const INITIAL_STATE = {
   requests: [],
-  selectedRequestType: "Pending",
+  selectedRequestType: "pending",
 };
 
 export default function (state = INITIAL_STATE, action) {

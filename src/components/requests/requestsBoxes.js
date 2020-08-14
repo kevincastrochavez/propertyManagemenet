@@ -8,17 +8,17 @@ class RequestsBoxes extends Component {
       <div className="requests-boxes">
         <RequestsBox
           icon="fas fa-exclamation-triangle"
-          title={"Pending"}
+          title={"pending"}
           count={this.props.pendingCount}
         />
         <RequestsBox
           icon="fas fa-wrench"
-          title={"In Progress"}
+          title={"in-progress"}
           count={this.props.progressCount}
         />
         <RequestsBox
           icon="fas fa-check-circle"
-          title={"Complete"}
+          title={"complete"}
           count={this.props.completeCount}
         />
       </div>
@@ -33,11 +33,11 @@ function mapStateToProps(state) {
   var completeCount = 0;
 
   requests.map((request) => {
-    if (request.status == "Pending") {
+    if (request.status == "pending") {
       pendingCount += 1;
-    } else if (request.status == "In Progress") {
+    } else if (request.status == "in-progress") {
       progressCount += 1;
-    } else if (request.status == "Complete") {
+    } else if (request.status == "complete") {
       completeCount += 1;
     }
   });

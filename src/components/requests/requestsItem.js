@@ -40,10 +40,10 @@ class RequestsItem extends Component {
 
     var mainIcon = "fas fa-exclamation-triangle";
     var moveButtonIcon = "fas fa-wrench";
-    if (status == "In Progress") {
+    if (status == "in-progress") {
       moveButtonIcon = "fas fa-check-circle";
       mainIcon = "fas fa-wrench";
-    } else if (status == "Complete") {
+    } else if (status == "complete") {
       moveButtonIcon = "fas fa-exclamation-triangle";
       mainIcon = "fas fa-check-circle";
     }

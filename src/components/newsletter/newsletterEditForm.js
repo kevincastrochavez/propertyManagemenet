@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 import { FormTitle } from "../formTitle";
 import { FormInput, FormTextArea, FormButton, FormImage } from "../formFields";
+import { connect } from "react-redux";
 
-class NewsletterNewForm extends Component {
+class EditNewsletterForm extends Component {
   render() {
     const { handleSubmit, formTitle } = this.props;
     const {
@@ -63,8 +64,15 @@ class NewsletterNewForm extends Component {
   }
 }
 
-NewsletterNewForm = reduxForm({
-  form: "newsletternew",
-})(NewsletterNewForm);
+EditNewsletterForm = reduxForm({
+  form: "editnewsletter",
+})(EditNewsletterForm);
 
-export default NewsletterNewForm;
+function mapStateToProps(state) {
+  const { newsletterToEdit } = state.newsletter;
+  return {
+    initialValues: newsletterToEdit,
+  };
+}
+
+export default connect(mapStateToProps)(EditNewsletterForm);
