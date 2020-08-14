@@ -5,8 +5,8 @@ class Layout extends Component {
   render() {
     return (
       <div className="layout-grid">
-        <Header />
-        <HeaderBar />
+        <Header title="Welcome to HOA Manager!" />
+        <HeaderBar subtitle="Please login to continue" />
         {this.props.children}
       </div>
     );
