@@ -12,7 +12,7 @@ class NewsletterNew extends Component {
     formData.append("body", body);
     formData.append("image", image);
 
-    this.props.createNewNewsletter(this.props._id, formData, () => {
+    this.props.createNewNewsletter(formData, () => {
       this.props.history.push("/dashboard");
     });
   };
