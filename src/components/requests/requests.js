@@ -6,9 +6,9 @@ class Requests extends Component {
   render() {
     return (
       <div className="requests">
-        {this.props.requests.map((requestIitem) => {
-          if (requestIitem.status == this.props.selectedRequestType) {
-            return <RequestsItem {...requestIitem} key={requestIitem._id} />;
+        {this.props.requests.map((requestItem) => {
+          if (requestItem.status == this.props.selectedRequestType) {
+            return <RequestsItem {...requestItem} key={requestItem._id} />;
           }
         })}
       </div>

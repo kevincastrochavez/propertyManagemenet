@@ -37,6 +37,7 @@ class RequestsItem extends Component {
   render() {
     const { title, body, date, imageUrl, status } = this.props;
     const parsedDate = new Date(date);
+
     var mainIcon = "fas fa-exclamation-triangle";
     var moveButtonIcon = "fas fa-wrench";
     if (status == "In Progress") {

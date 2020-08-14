@@ -10,13 +10,41 @@
   grid-template-columns: [s] 1fr [e];
   justify-items: center;
 
-  &__count {
+  &:hover {
+    border-color: $color-red-BA;
+    background-color: white;
+
+    .requests-box__point {
+      display: none;
+    }
+
+    .requests-box__count {
+      opacity: 0;
+    }
+
+    .requests-box__icon {
+      opacity: 1;
+    }
+
+    .requests-box__title {
+      color: $color-red-BA;
+    }
+  }
+
+  &__count,
+  &__icon {
+    transition: all 0.15s ease-in-out;
     align-self: end;
     font-size: 7rem;
     line-height: 8.1rem;
     margin-bottom: 1rem;
     grid-row: s/m;
     grid-column: s/e;
+  }
+
+  &__icon {
+    opacity: 0;
+    font-size: 5rem;
   }
 
   &__title {
