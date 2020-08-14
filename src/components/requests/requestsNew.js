@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import NewsletterNewForm from "../newsletter/newsletterNewForm";
 import { connect } from "react-redux";
 import * as actions from "../../actions";
-import { createNewRequest } from "./requests";
 
 class RequestsNew extends Component {
   onSubmit = (fields) => {
