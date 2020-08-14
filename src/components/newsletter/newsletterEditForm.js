@@ -66,6 +66,7 @@ class EditNewsletterForm extends Component {
 
 EditNewsletterForm = reduxForm({
   form: "editnewsletter",
+  enableReinitialize: true,
 })(EditNewsletterForm);
 
 function mapStateToProps(state) {
