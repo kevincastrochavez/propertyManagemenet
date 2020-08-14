@@ -1,7 +1,6 @@
 import { SET_NEWSLETTERS, FETCH_NEWSLETTER_ID } from "./types";
 import axios from "axios";
 import { ROOT_URL } from "../config";
-import { response } from "express";
 
 export function fetchNewsletters() {
   return function (dispatch) {
@@ -49,7 +48,7 @@ export function createNewNewsletter(formData, success) {
   };
 }
 
-export function editNewNewsletter(itemID, formDate, success) {
+export function editNewNewsletter(itemID, formData, success) {
   const token = localStorage.getItem("token");
   const id = itemID;
 
