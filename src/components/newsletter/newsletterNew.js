@@ -1,9 +1,20 @@
 import React, { Component } from "react";
 import NewsletterNewForm from "./newsletterNewForm";
+import { connect } from "react-redux";
+import actions from "../../actions";
 
 class NewsletterNew extends Component {
   onSubmit = (fields) => {
-    this.props.history.push("/dashboard");
+    const { title, body, image } = fields;
+
+    var formData = new FormData();
+    formData.append("title", title);
+    formData.append("body", body);
+    formData.append("image", image);
+
+    this.props.createNewNewsletter(this.props._id, formData, () => {
+      this.props.history.push("/dashboard");
+    });
   };
 
   onCancel = () => {
@@ -27,4 +38,4 @@ class NewsletterNew extends Component {
   }
 }
 
-export default NewsletterNew;
+export default connect(null, actions)(NewsletterNew);
