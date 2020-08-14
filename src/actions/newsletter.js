@@ -1,6 +1,7 @@
 import { SET_NEWSLETTERS, FETCH_NEWSLETTER_ID } from "./types";
 import axios from "axios";
 import { ROOT_URL } from "../config";
+import { response } from "express";
 
 export function fetchNewsletters() {
   return function (dispatch) {
@@ -44,6 +45,28 @@ export function createNewNewsletter(formData, success) {
       })
       .catch((err) => {
         console.log(err);
+      });
+  };
+}
+
+export function editNewNewsletter(itemID, formDate, success) {
+  const token = localStorage.getItem("token");
+  const id = itemID;
+
+  return function () {
+    axios
+      .post(`${ROOT_URL}/newsletters/edit/${id}`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          authorization: token,
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+        success();
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 }
