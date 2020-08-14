@@ -4,6 +4,7 @@ import RequestsBoxes from "./requestsBoxes";
 import Requests from "./requests";
 import { connect } from "react-redux";
 import * as actions from "../../actions";
+import RequireAdmin from "../auth/requireAdmin";
 
 class RequestsGrid extends Component {
   handleAddRequest = () => {
@@ -17,11 +18,13 @@ class RequestsGrid extends Component {
   render() {
     return (
       <div className="requests-grid">
-        <Button
-          className="requests-grid__button"
-          icon="fas fa-plus"
-          callback={() => this.handleAddRequest()}
-        />
+        <RequireAdmin>
+          <Button
+            className="requests-grid__button"
+            icon="fas fa-plus"
+            callback={() => this.handleAddRequest()}
+          />
+        </RequireAdmin>
         <RequestsBoxes />
         <Requests />
       </div>
