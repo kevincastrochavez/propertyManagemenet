@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Button from "../button";
 import history from "../../history";
+import { ROOT_URL } from "../../config";
 
 class NewsletterLatest extends Component {
   handleEdit = () => {
@@ -12,7 +13,10 @@ class NewsletterLatest extends Component {
     return (
       <div className="newsletter-latest">
         <h1 className="newsletter-latest__title">{title}</h1>
-        <img className="newsletter-latest__image" src={imageUrl}></img>
+        <img
+          className="newsletter-latest__image"
+          src={`${ROOT_URL}${imageUrl}`}
+        ></img>
         <Button
           className="newsletter-latest__button"
           callback={() => this.handleEdit()}
