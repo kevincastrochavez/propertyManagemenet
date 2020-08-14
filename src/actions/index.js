@@ -14,7 +14,7 @@ import {
   changeStatus,
 } from "./requests";
 
-import { updateHeader } from "./header;";
+import { updateHeader } from "./header";
 
 export {
   signUp,

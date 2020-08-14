@@ -9,6 +9,6 @@ export function Header({ title, subtitle }) {
   );
 }
 
-export function HeaderBar() {
-  return <div className="bar"></div>;
+export function HeaderBar({ hideBar }) {
+  return hideBar ? <div></div> : <div className="bar"></div>;
 }

@@ -4,10 +4,12 @@ import { connect } from "react-redux";
 
 class Layout extends Component {
   render() {
+    const { title, subtitle, hideBar } = this.props;
+
     return (
       <div className="layout-grid">
-        <Header title="Welcome to HOA Manager!" />
-        <HeaderBar subtitle="Please login to continue" />
+        <Header title={title} subtitle={subtitle} />
+        {this.props.hideBar ? "" : <HeaderBar />}
         {this.props.children}
       </div>
     );
@@ -15,7 +17,11 @@ class Layout extends Component {
 }
 
 function mapStateToProps(state) {
-  return state;
+  const header = state.header;
+
+  return {
+    ...header,
+  };
 }
 
 export default connect(mapStateToProps)(Layout);
