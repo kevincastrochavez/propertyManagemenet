@@ -25,6 +25,7 @@ import NewsletterNew from "./components/newsletter/newsletterNew";
 import EditNewsletter from "./components/newsletter/newsletterEdit.js";
 import NewsletterDetails from "./components/newsletter/newsletterDetails";
 import RequestsNew from "./components/requests/requestsNew";
+import forgotPassword from "./components/auth/forgotPassword";
 
 function main() {
   ReactDOM.render(
@@ -35,6 +36,7 @@ function main() {
             <Route path="/" exact component={SignIn} />
             <Route path="/signin" component={SignIn} />
             <Route path="/signup" component={SignUp} />
+            <Route path="/forgot" component={forgotPassword} />
 
             <Route path="/dashboard" component={requireAuth(Dashboard)} />
             <Route
