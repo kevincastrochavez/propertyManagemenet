@@ -9,6 +9,7 @@
   grid-template-rows: [s] 8.1rem [m] 2.3rem [e];
   grid-template-columns: [s] 1fr [e];
   justify-items: center;
+  cursor: pointer;
 
   &:hover {
     border-color: $color-red-BA;

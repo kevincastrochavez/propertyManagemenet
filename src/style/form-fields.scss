@@ -75,6 +75,7 @@
     font-weight: 500;
     line-height: 2.8rem;
     text-align: center;
+    cursor: pointer;
   }
 }
 
@@ -89,6 +90,7 @@
     text-align: center;
     width: 13rem;
     background-color: transparent;
+    cursor: pointer;
   }
 
   &__danger {
@@ -135,5 +137,6 @@
     grid-row: image-s/image-e;
     justify-self: center;
     align-self: center;
+    cursor: pointer;
   }
 }
