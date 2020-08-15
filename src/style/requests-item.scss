@@ -1,6 +1,6 @@
 .requests-item {
   display: grid;
-  grid-template-rows: [s title-s] 3.4rem [title-e tenant-s] 1rem [tenant-e e];
+  grid-template-rows: [s title-s] 3.4rem [title-e tenant-s] 3rem [tenant-e e];
   grid-template-columns: [icon-s] 10rem [icon-e s title-s] minmax(4rem, 1fr) [title-e arrow-s] 6.8rem [arrow-e date-s] 10rem [date-e e] 6rem;
   align-items: center;
 
@@ -39,11 +39,14 @@
 
   &__description {
     grid-column: s/e;
+  }
+
+  .item-description {
     display: grid;
     grid-column-gap: 4rem;
     grid-auto-flow: column;
-    // grid-template-columns: [image-s] 15rem [image-e] 1fr;
-    // grid-template-rows: 10rem;
+    grid-template-columns: [image-s] 15rem [image-e] 1fr;
+    grid-template-rows: 10rem;
   }
 }
 
@@ -57,7 +60,6 @@
 
   &__icon {
     font-size: 2.7rem;
-    margin-top: 1.9rem;
   }
 
   &__title {
@@ -93,21 +95,21 @@
     opacity: 0;
   }
 
-  &__description {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
+  .item-description {
+    margin-top: 1.4rem;
+    margin-bottom: 2.2rem;
 
-  &__description-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    grid-column: image-s/image-e;
-  }
+    &__img {
+      grid-column: image-s/image-e;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
 
-  &__description-text {
-    font-size: 1.4rem;
-    line-height: 1.7rem;
+    &__text {
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+    }
   }
 
   &:hover {

@@ -80,13 +80,13 @@ class RequestsItem extends Component {
 
         <div className="requests-item__description">
           <AnimateHeight duration={300} height={this.state.height}>
-            <div className="requests-item__description">
+            <div className="item-description">
               <img
-                className="requests-item__description-img"
+                className="item-description__img"
                 src={`${ROOT_URL}/${imageUrl}`}
               />
 
-              <p className="requests-item__description-text">{body}</p>
+              <p className="item-description__text">{body}</p>
             </div>
           </AnimateHeight>
         </div>
