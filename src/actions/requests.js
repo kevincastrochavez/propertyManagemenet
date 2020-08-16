@@ -9,7 +9,7 @@ export function changeSelectedRequestType(boxType) {
   };
 }
 
-export function createNewRequest(formData, success) {
+export function createNewRequest(userId, formData, success) {
   const token = localStorage.getItem("token");
   return function () {
     axios

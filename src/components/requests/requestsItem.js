@@ -18,12 +18,15 @@ class RequestsItem extends Component {
 
   toggleDropdown = () => {
     var element = document.getElementById(`${this.props._id} requests-item`);
+    var arrowRotate = document.getElementById(`${this.props._id} arrow-down`);
 
     if (this.state.height == 0) {
       element.classList.add("bg-F8");
+      arrowRotate.classList.add("arrow-up");
       this.setState({ height: "auto" });
     } else {
       element.classList.remove("bg-F8");
+      arrowRotate.classList.remove("arrow-up");
       this.setState({ height: 0 });
     }
   };
@@ -57,6 +60,7 @@ class RequestsItem extends Component {
           <div className="requests-item__title__text">{title}</div>
 
           <Icon
+            id={`${_id} arrow-down`}
             callback={() => this.toggleDropdown()}
             className="requests-item__title__arrow"
             icon="fas fa-sort-down"

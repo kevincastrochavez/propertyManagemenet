@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NewsletterNewForm from "./newsletterNewForm";
 import { connect } from "react-redux";
-import actions from "../../actions";
+import * as actions from "../../actions";
 
 class NewsletterNew extends Component {
   onSubmit = (fields) => {

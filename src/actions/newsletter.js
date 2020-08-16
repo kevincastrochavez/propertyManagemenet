@@ -48,7 +48,7 @@ export function createNewNewsletter(formData, success) {
   };
 }
 
-export function editNewNewsletter(itemID, formData, success) {
+export function editNewsletter(itemID, formData, success) {
   const token = localStorage.getItem("token");
   const id = itemID;
 
